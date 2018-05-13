@@ -1,0 +1,253 @@
+@keyframes showreel-hover {
+  0% {
+    transform: translateY(0px)
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+body {
+  background-color: #ebf3e7;
+}
+
+.navbar {
+  background: #a6c289;
+}
+
+.mix_blend_wrapper {
+  background: #ebf3e7;
+}
+
+.main_block .mix_blend_wrapper {
+  padding: 1rem 0 0 0;
+}
+
+.main_block .mix_blend_wrapper img {
+  opacity: 0.8;
+  margin: 0 1rem;
+}
+
+.mix_blend_wrapper img {
+  /* opacity: 0.85; */
+
+  mix-blend-mode: darken;
+}
+
+.second_block .mix_blend_wrapper {
+  padding: 5rem 0 5rem 0;
+}
+
+hr.style11 {
+  height: 6px;
+  margin: 0;
+
+  border: 0;
+  background: url(http://ibrahimjabbari.com/english/images/hr-11.png) repeat-x 0 0;
+}
+
+.bg_url_wrapper {
+  padding-right: 0;
+  padding-left: 0;
+
+  background: url(./assets/bg_0002_left.png) left repeat-y,
+              url(./assets/bg_0001_right.png) right repeat-y;
+}
+
+/* VSKRSL TYPOGRAPHY */
+h1 {
+  text-align: center;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+
+  opacity: 0.7;
+  color: #4a4a4a;
+
+  font-family: ChalkboardSE-Regular;
+  font-size: 2.2rem;
+}
+
+h2 {
+  text-transform: uppercase;
+
+  opacity: 0.33;
+  color: #815228;
+
+  font-family: ChalkboardSE-Regular;
+  font-size: 1rem;
+  line-height: 24px;
+}
+
+.main_block  h2 {
+  padding: .5rem 0;
+}
+
+.main_block_btn {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem 1.2rem;
+
+  text-align: center;
+  letter-spacing: 0;
+
+  color: #FFFFFF;
+  border: 0px;
+  border-radius: 4px;
+  background: #647651;
+
+  font-size: 20px;
+}
+
+h6 {
+  color: #9B9B9B;
+
+  font-family: HelveticaNeue-Light;
+  font-size: 0.9rem;
+}
+
+.main_block h6 {
+  padding-top: 1rem;
+
+  opacity: 0.7;
+}
+
+p {
+  font-family: HelveticaNeue-Light;
+}
+
+.nav-link {
+  font-family: HelveticaNeue-Light;
+}
+
+.second_block h3 {
+  /* Получите: */
+  padding-top: 1rem;
+font-family: HelveticaNeue;
+font-size: 1.1rem;
+color: #4A4A4A;
+text-transform: uppercase;
+/* letter-spacing: 0; */
+/* text-align: center; */
+}
+
+.second_block p {
+  /* Бесплатная доставка: */
+font-family: HelveticaNeue-Light;
+font-size: 0.9rem;
+color: #647651;
+letter-spacing: 0;
+/* font-style: italic; */
+/* text-align: center; */
+}
+
+/* .second_block .row {
+  padding: 2rem 0;
+} */
+
+.second_block {
+  padding: 0 0 5rem 0;
+  /* height: 600px; */
+}
+
+.third_block img {
+  width: 70%;
+}
+
+.third_block {
+  padding: 6rem 0;
+  /* margin-left: 0; */
+}
+
+.third_block h3 {
+  /* КАПЕЛЬНЫЙ ПОЛИВ: */
+font-family: ChalkboardSE-Light;
+font-size: 1.2em;
+text-transform: uppercase;
+
+}
+
+.third_block p {
+  font-family: HelveticaNeue-Light;
+font-size: 0.9rem;
+/* color: #647651; */
+letter-spacing: 0;
+}
+
+.test_relative {
+  position: relative;
+  top: -85%;
+  padding-left: 15px;
+  left: 5%;
+  margin-bottom: -52px;
+
+}
+
+.test_relative2 {
+  position: relative;
+  padding-right: 15px;
+  top: -20%;
+  right: 5%;
+  margin-bottom: -52px;
+}
+
+.fourth_block {
+  padding: 15rem 0;
+
+}
+
+.fourth_block > .row {
+  /* margin-bottom: -206px; */
+}
+
+.fourth_block h3 {
+  font-family: ChalkboardSE-Light;
+font-size: 1.2em;
+text-transform: uppercase;
+}
+
+.fourth_block p {
+  font-family: HelveticaNeue-Light;
+font-size: 0.9rem;
+/* color: #647651; */
+letter-spacing: 0;
+}
+
+.fourth_block h3+h3 {
+  padding-top: 2rem;
+}
+
+.fourth_block img {
+  position: absolute;
+}
+
+.fourth_block-img__one {
+  z-index: 50;
+  top:30%;
+  left:0%;
+  width:70%;
+  animation: showreel-hover 2.5s ease-in-out infinite;
+    
+}
+
+.fourth_block-img__two {
+  z-index: 48;
+  top: -50%;
+  left: 30%;
+  width:70%;
+  animation: showreel-hover 2.5s ease-in-out infinite;
+}
+.fourth_block-img__three {
+  z-index: 49;
+  
+  top: 60%;
+  left: 50%;
+  width:70%;
+  animation: showreel-hover 2.5s ease-in-out infinite;
+}
+
+
