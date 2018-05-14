@@ -321,4 +321,39 @@ letter-spacing: 0;
   padding-top: 2rem;
 }
 
+.six_block {
+  padding: 10rem 0;
+}
+
+.six_block h3 {
+  font-family: ChalkboardSE-Light;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+
+.six_block h2 {
+  font-size: 0.9rem;
+  padding-bottom: 2rem;
+}
+
+.form_block {
+  padding: 10rem 0;
+}
+
+.main_block_btn__form {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem 5rem;
+
+  text-align: center;
+  letter-spacing: 0;
+
+  color: #FFFFFF;
+  border: 0px;
+  border-radius: 4px;
+  background: #647651;
+
+  font-size: 20px;
+}
+
 
