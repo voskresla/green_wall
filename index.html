@@ -14,14 +14,14 @@
 
 <body data-spy="scroll" data-target="#navbarNavDropdown">
   <!-- <nav class="navbar navbar-default"></nav> -->
-  <nav class="navbar navbar-expand-lg sticky-top">
+  <nav class="navbar navbar-light navbar-expand-lg sticky-top">
     <div class="container">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="#" style="display:flex">
         <svg width="68px" height="40px" viewBox="0 0 68 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
           <desc>Created with Sketch.</desc>
@@ -120,7 +120,7 @@
             <span style="display: block">простая живая</span>
           </h2>
           <p>До последнего времени вертикальное озеленение было не доступно из-за эксклюзивности, технических сложностей и стоимости.</p>
-          <a class="btn btn-primary main_block_btn" href="#" role="button">Теперь все доступно</a>
+          <a class="btn btn-primary main_block_btn" href="#order" role="button">Теперь все доступно</a>
           <h6>участник выставок:</h6>
           <div class="mix_blend_wrapper">
             <img src="./assets/ug_agro_logo.png" alt="">
@@ -140,6 +140,7 @@
         <img class="d-none d-sm-block" src="./assets/product_stand_0001.png" alt="">
         <img class="d-none d-sm-block" src="./assets/product_stand_0002.png" alt="">
         <img src="./assets/product_stand_0003.png" alt="">
+        <img src="./assets/test_0001.gif" alt="">
         <img class="d-none d-sm-block" src="./assets/product_stand_0004.png" alt="">
         <img class="d-none d-sm-block" src="./assets/product_stand_0005.png" alt="">
       </div>
@@ -173,7 +174,7 @@
 
     <!-- 6 block start -->
 
-    <div class="six_block container" >
+    <div class="six_block container">
       <div class="row">
         <div class="col">
           <h3>О зелёной стене</h3>
@@ -281,7 +282,7 @@
     <hr class="style11">
 
     <!-- form block start -->
-    <div class="form_block container" >
+    <div class="form_block container">
       <div class="row justify-content-center text-center">
         <div class="col-sm col-lg-6">
           <h2 id="order">оформление заказа</h2>
@@ -319,15 +320,15 @@
           </ul>
           <form action="https://jprny8p0l9.execute-api.us-east-1.amazonaws.com/dev/static-site-mailer" method="POST">
             <div class="form-group">
-              <input type="phone" id="phone" placeholder="Телефон" class="form-control">
+              <input type="phone" id="phone" name="phone" placeholder="Телефон" class="form-control" required>
             </div>
             <div class="form-group">
               <div class="form-row">
                 <div class="col">
-                  <input type="text" id="name" placeholder="Имя" class="form-control">
+                  <input type="text" id="name" name="name" placeholder="Имя" class="form-control" required>
                 </div>
                 <div class="col">
-                  <input type="text" id="city" placeholder="Город" class="form-control">
+                  <input type="text" id="city" name="city" placeholder="Город" class="form-control" required>
                 </div>
               </div>
             </div>
@@ -336,6 +337,13 @@
               <span>ЗА 19 900 ₽</span>
             </button>
           </form>
+          <!-- js-from-response -->
+
+        </div>
+        <div class="row">
+          <div class="col-sm">
+            <h2 class="js-form-response"></h2>
+          </div>
         </div>
       </div>
     </div>
@@ -417,19 +425,32 @@
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="./vendors/jquery-3.2.1.slim.min.js"></script>
+  <!-- <script src="./vendors/jquery-3.2.1.slim.min.js"></script>
   <script src="./vendors/popper.min.js"></script>
-  <script src="./vendors/bootstrap.min.js"></script>
+  <script src="./vendors/bootstrap.min.js"></script> -->
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 
   <!-- TODO: не забудь удалить это нафиг -->
   <script>
 
     (() => {
       const form = document.querySelector('form');
+      const formResponse = document.querySelector('.js-form-response');
       // const formResponse = document.querySelector('js-form-response');
 
       form.onsubmit = e => {
         e.preventDefault();
+
+        // validate form
+        // we use standart form validation 'required'
+        
 
         // Prepare data to send
         const data = {};
@@ -449,17 +470,22 @@
         xhr.send(JSON.stringify(data));
 
         // Callback function
-        // xhr.onloadend = response => {
-        //   if (response.target.status === 200) {
-        //     // The form submission was successful
-        //     form.reset();
-        //     formResponse.innerHTML = 'Thanks for the message. I’ll be in touch shortly.';
-        //   } else {
-        //     // The form submission failed
-        //     formResponse.innerHTML = 'Something went wrong';
-        //     console.error(JSON.parse(response.target.response).message);
-        //   }
-        // };
+        xhr.onloadend = response => {
+          if (response.target.status === 200) {
+            // The form submission was successful
+            form.reset();
+            document.querySelector('.main_block_btn__form').innerHTML = 'Спасибо! Ждите звонка.'
+            formResponse.innerHTML = 'Ваша заявка отправлена. Наш менеджер свяжется с Вами для продолжения оформления заказа.';
+            
+            // disable all form inputs and button when ok
+            formElements.map(item => item.setAttribute('disabled', true));
+
+          } else {
+            // The form submission failed
+            formResponse.innerHTML = 'Something went wrong';
+            console.error(JSON.parse(response.target.response).message);
+          }
+        };
       };
     })();
   </script>
